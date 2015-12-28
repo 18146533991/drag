@@ -4,10 +4,13 @@ function Drag(){
 	this.disY=null;
 }
 Drag.prototype.init=function(id){
+	var _this=this;
 	this.obj=document.getElementById(id);
 	this.obj.onmousedown=function(ev){
 		ev=ev||event;
-		this.disX=ev.clientX-this.obj.offsetLeft;
-		this.disX=ev.clientY-this.obj.offsetTop;
+		_this.disX=ev.clientX-_this.obj.offsetLeft;
+		_this.disX=ev.clientY-_this.obj.offsetTop;
+		
+		
 	}
-}
+} 
