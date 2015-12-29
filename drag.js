@@ -2,7 +2,7 @@ function Drag(){
 	this.obj=null;
 	this.disX=null;
 	this.disY=null;
-}
+}//asdfasdfasdf
 Drag.prototype.init=function(id){
 	var _this=this;
 	this.obj=document.getElementById(id);
