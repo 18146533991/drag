@@ -12,7 +12,7 @@ Drag.prototype.init=function(id){
 		_this.disX=ev.clientY-_this.obj.offsetTop;
 		
 		document.onmousemove=function(ev){
-			
+			ev=ev||event;
 		}
 	}
 } 
