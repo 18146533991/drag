@@ -9,10 +9,20 @@ Drag.prototype.init=function(id){
 	this.obj.onmousedown=function(ev){
 		ev=ev||event;
 		_this.disX=ev.clientX-_this.obj.offsetLeft;
-		_this.disX=ev.clientY-_this.obj.offsetTop;
+		_this.disY=ev.clientY-_this.obj.offsetTop;
 		
 		document.onmousemove=function(ev){
 			ev=ev||event;
+			_this.obj.style.left=ev.clientX-_this.disX+'px';
+			_this.obj.style.top=ev.clientY-_this.disY+'px';
 		}
+		
+		document.onmouseup=function(){
+			document.onmousemove=null;
+			document.onmouseup=null;
+			_this.obj.releaseCapture && _this.obj.releaseCapture();
+		}
+		_this.obj.setCapture && _this.obj.setCapture();
+		return false;
 	}
 } 
