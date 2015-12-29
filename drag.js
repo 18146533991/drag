@@ -11,6 +11,8 @@ Drag.prototype.init=function(id){
 		_this.disX=ev.clientX-_this.obj.offsetLeft;
 		_this.disX=ev.clientY-_this.obj.offsetTop;
 		
-		
+		document.onmousemove=function(ev){
+			
+		}
 	}
 } 
